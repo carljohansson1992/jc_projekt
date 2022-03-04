@@ -128,6 +128,6 @@
                 </div>
             </div>
         </div>
-        <script>console.log('This is Johns first commit');</script>
+        <script>console.log('This is Johns hopefully glorious commit');</script>
     </body>
 </html>
