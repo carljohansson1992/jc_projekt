@@ -14,7 +14,10 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        //
+        $recipes = Recipe::latest()->get();
+        return view('recipe', [
+            'recipes' => $recipes,
+        ]);
     }
 
     /**

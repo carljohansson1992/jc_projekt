@@ -9,11 +9,17 @@ class Recipe extends Model
 {
     use HasFactory;
 
-    public function categories(){
-        require $this->belongsToMany(Category::class);
-    }
+    protected $fillable = [
+        'recipe_name',
+        'recipe_desc',
+        'ingredients'
+    ];
+
+    // public function categories(){
+    //     require $this->belongsToMany(Category::class);
+    // }
 
     public function user(){
-        require $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }
