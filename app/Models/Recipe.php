@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Recipe extends Model
 {
     use HasFactory;
+
+    public function categories(){
+        require $this->belongsToMany(Category::class);
+    }
+
+    public function user(){
+        require $this->belongsTo(User::class);
+    }
 }

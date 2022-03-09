@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('user_id');
             $table->text('recipe_name');
             $table->text('recipe_desc');
-            $table->integer('category_id');
             $table->text('ingredients');
         });
     }
