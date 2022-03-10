@@ -16,6 +16,7 @@
 
                     {{ __('You are logged in!') }}
                     <a href="{{ url('/recipe') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Recipe</a>
+                    <a href="{{ url('/categories') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Categories</a>
                 </div>
             </div>
         </div>

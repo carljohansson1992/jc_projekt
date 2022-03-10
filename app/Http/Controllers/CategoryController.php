@@ -14,7 +14,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderby('category_name')->get();
+        return view('categories', [
+            'categories' => $categories,
+        ]);
     }
 
     /**
