@@ -10,6 +10,6 @@ class Category extends Model
     use HasFactory;
 
     public function recipes(){
-        require $this->belongsToMany(Recipe::class);
+        return $this->belongsToMany(Recipe::class);
     }
 }

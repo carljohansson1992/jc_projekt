@@ -15,11 +15,12 @@ class Recipe extends Model
         'ingredients'
     ];
 
-    // public function categories(){
-    //     require $this->belongsToMany(Category::class);
-    // }
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
     }
 }
