@@ -51,6 +51,7 @@ class RecipeController extends Controller
         $newRecipe->recipe_name = request('recipeTitle');
         $newRecipe->recipe_desc = request('recipeDesc');
         $newRecipe->ingredients = request('ingredients');
+        $newRecipe->time = request('time');
 
         $newRecipe->save();
         $newRecipe->categories()->sync($request->categories);

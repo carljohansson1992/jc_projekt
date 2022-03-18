@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            
-{{-- 
+
+{{--
                 <div class="card-body">
                     @foreach($recipes as $recipe)
                     <p>{{ $recipe->recipe_name }}</p>
@@ -19,11 +19,13 @@
                     {{ csrf_field() }}
                     <label for="NewRecipe">Create a new recipe!</label>
                     <h3>Name</h3>
-                    <input type="text" name="recipeTitle" id=""> <br>
+                    <input type="text" required name="recipeTitle" id=""> <br>
                     <h3>Instructions</h3>
-                    <input type="text" name="recipeDesc" id=""> <br>
+                    <input type="text" required name="recipeDesc" id=""> <br>
                     <h3>Ingredients</h3>
-                    <input type="text" name="ingredients" id=""> <br>
+                    <input type="text" required name="ingredients" id=""> <br>
+                    <h3>Cookingtime (Minutes)</h3>
+                    <input type="number" required name="time" id=""> <br>
                     @foreach($categories as $category)
                     {{-- <p>{{ $category->category_name }}</p>
 
