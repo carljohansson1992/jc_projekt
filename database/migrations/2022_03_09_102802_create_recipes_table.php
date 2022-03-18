@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('recipe_name');
             $table->text('recipe_desc');
             $table->text('ingredients');
+            $table->integer('time');
         });
     }
 
