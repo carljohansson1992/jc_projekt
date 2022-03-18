@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recipe;
+use App\Models\recipe;
 use Illuminate\Http\Request;
 
-class RecipeController extends Controller
+class recipe extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::latest()->get();
-        return view('recipe', [
-            'recipes' => $recipes,
-        ]);
+        //
     }
 
     /**
@@ -44,10 +41,10 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function show(Recipe $recipe)
+    public function show(recipe $recipe)
     {
         //
     }
@@ -55,10 +52,10 @@ class RecipeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function edit(Recipe $recipe)
+    public function edit(recipe $recipe)
     {
         //
     }
@@ -67,10 +64,10 @@ class RecipeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recipe $recipe)
+    public function update(Request $request, recipe $recipe)
     {
         //
     }
@@ -78,10 +75,10 @@ class RecipeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  \App\Models\recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recipe $recipe)
+    public function destroy(recipe $recipe)
     {
         //
     }
