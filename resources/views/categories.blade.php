@@ -9,12 +9,23 @@
 
                 <div class="card-body">
                     @foreach($categories as $category)
-                    <p>{{ $category->category_name }}</p>
+                    {{-- <p>{{ $category->category_name }}</p>
 
-                    <br>
+                    <br> --}}
+                    <input type="checkbox" name="categories[]" value="{{ $category->id }}">
+                    <label>{{ $category->category_name }}</label>
                     @endforeach
 
                 </div>
+                {{-- <select class="form-select" name="tags[]" multiple="multiple">
+                    @foreach($categories as $tag)
+                        <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+                    @endforeach --}}
+
+
+
+
+                </select>
             </div>
         </div>
     </div>

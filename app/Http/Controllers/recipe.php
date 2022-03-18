@@ -35,7 +35,7 @@ class recipe extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$recipe->categories()->sync($request->categories)
     }
 
     /**
