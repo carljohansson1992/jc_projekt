@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\recipe;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 
-class recipe extends Controller
+class RecipeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class recipe extends Controller
      */
     public function index()
     {
-        //
+
+        return view('create');
     }
 
     /**
@@ -24,7 +25,8 @@ class recipe extends Controller
      */
     public function create()
     {
-        //
+        // echo "<script>console.log('targets create function')</script>";
+        $newRecipe = new Recipe;
     }
 
     /**
@@ -35,16 +37,16 @@ class recipe extends Controller
      */
     public function store(Request $request)
     {
-        //$recipe->categories()->sync($request->categories)
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\recipe  $recipe
+     * @param  \App\Models\Recipe  $Recipe
      * @return \Illuminate\Http\Response
      */
-    public function show(recipe $recipe)
+    public function show(Recipe $recipe)
     {
         //
     }
@@ -52,10 +54,10 @@ class recipe extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\recipe  $recipe
+     * @param  \App\Models\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function edit(recipe $recipe)
+    public function edit(Recipe $recipe)
     {
         //
     }
@@ -64,10 +66,10 @@ class recipe extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\recipe  $recipe
+     * @param  \App\Models\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, recipe $recipe)
+    public function update(Request $request, Recipe $recipe)
     {
         //
     }
@@ -75,10 +77,10 @@ class recipe extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\recipe  $recipe
+     * @param  \App\Models\Recipe  $Recipe
      * @return \Illuminate\Http\Response
      */
-    public function destroy(recipe $recipe)
+    public function destroy(Recipe $recipe)
     {
         //
     }
