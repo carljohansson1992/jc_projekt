@@ -17,8 +17,8 @@
 
                     <hr> --}}
                     {{-- @endforeach --}}
-                    <?php print_r($recipes); ?>
-                    {{ auth()->user()->name}}
+                    <p>{{ $recipe->user_id }}</p>
+                    {{-- {{ auth()->user()->name}} --}}
 
 
                 </div>

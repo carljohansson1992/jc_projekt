@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/showRecipes', [App\Http\Controllers\RecipeController::class, 'index'])->name('showRecipes');
-Route::get('/showTheRecipe', [App\Http\Controllers\RecipeController::class, 'show'])->name('showTheRecipe');
+Route::get('/showTheRecipe/{id}', [App\Http\Controllers\RecipeController::class, 'show'])->name('showTheRecipe');
 Route::get('/categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('categories');
 Route::get('/createRecipe', [App\Http\Controllers\RecipeController::class, 'create'])->name('createRecipe');
 Route::post('/submitrecipe', [App\Http\Controllers\RecipeController::class, 'store'])->name('submitrecipe');
