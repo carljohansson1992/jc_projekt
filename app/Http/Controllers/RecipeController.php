@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recipe;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
+use App\Models\Recipe;
 
 
 class RecipeController extends Controller
@@ -17,11 +18,12 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        // $categories = Category::orderby('category_name')->get();
-        // return view('create', [
-        //     'categories' => $categories,
-        // ]);
+        $recipes = Recipe::orderby('recipe_name')->get();
+        return view('index', [
+            'recipes' => $recipes,
+        ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -62,10 +64,16 @@ class RecipeController extends Controller
      * @param  \App\Models\Recipe  $Recipe
      * @return \Illuminate\Http\Response
      */
-    public function show(Recipe $recipe)
+    public function show($id)
     {
-        //
+        // $recipes = Recipe::find($id);
+
+            // 'recipes' => $recipes
+            $recipe = Recipe::find($id);
+
+        return view('show')->with('recipe', $recipe);
     }
+
 
     /**
      * Show the form for editing the specified resource.

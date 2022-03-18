@@ -8,17 +8,16 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @foreach($recipes as $recipe)
-                    <h3><a href="/showTheRecipe/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
-
-
+                    {{-- @foreach($recipes as $recipe)
+                    <p>{{ $recipe->recipe_name }}</p>
                     <br>
                     <p>{{ $recipe->recipe_desc }}</p>
-
+                    <p>{{$recipe->user->name }}</p>
                     <br>
 
-                    <hr>
-                    @endforeach
+                    <hr> --}}
+                    {{-- @endforeach --}}
+                    <?php print_r($recipes); ?>
                     {{ auth()->user()->name}}
 
 
