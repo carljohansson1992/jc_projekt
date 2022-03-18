@@ -25,7 +25,8 @@ class CreateRecipeController extends Controller
      */
     public function create()
     {
-        echo "<script>console.log('targets create function')</script>";
+        // echo "<script>console.log('targets create function')</script>";
+
     }
 
     /**
