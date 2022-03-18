@@ -15,7 +15,7 @@
                     @endforeach
 
                 </div> --}}
-                <form method="post" action="{{ route('createRecipe') }}">
+                <form method="post" action="{{ route('submitrecipe') }}">
                     {{ csrf_field() }}
                     <label for="NewRecipe">Create a new recipe!</label>
                     <h3>Name</h3>
@@ -24,7 +24,7 @@
                     <input type="text" name="recipeDesc" id=""> <br>
                     <h3>Ingredients</h3>
                     {{-- my brain loading rn  --}}
-                    <button type="submit"></button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>

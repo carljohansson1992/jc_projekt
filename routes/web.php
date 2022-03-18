@@ -24,3 +24,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/recipe', [App\Http\Controllers\RecipeController::class, 'index'])->name('recipe');
 Route::get('/categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('categories');
 Route::get('/createRecipe', [App\Http\Controllers\CreateRecipeController::class, 'index'])->name('createRecipe');
+Route::post('/submitrecipe', [App\Http\Controllers\CreateRecipeController::class, 'create'])->name('submitrecipe');
