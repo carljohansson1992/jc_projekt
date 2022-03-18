@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
+
 
 class RecipeController extends Controller
 {
@@ -14,8 +17,10 @@ class RecipeController extends Controller
      */
     public function index()
     {
-
-        return view('create');
+        // $categories = Category::orderby('category_name')->get();
+        // return view('create', [
+        //     'categories' => $categories,
+        // ]);
     }
 
     /**
@@ -25,8 +30,10 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        // echo "<script>console.log('targets create function')</script>";
-        $newRecipe = new Recipe;
+        $categories = Category::orderby('category_name')->get();
+        return view('create', [
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -37,7 +44,16 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newRecipe = new Recipe;
+        $newRecipe->user_id = Auth::user()->id;
+        $newRecipe->recipe_name = request('recipeTitle');
+        $newRecipe->recipe_desc = request('recipeDesc');
+        $newRecipe->ingredients = request('ingredients');
+
+        $newRecipe->save();
+        $newRecipe->categories()->sync($request->categories);
+
+        return view('home');
     }
 
     /**

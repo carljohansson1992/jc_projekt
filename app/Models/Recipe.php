@@ -10,5 +10,9 @@ class Recipe extends Model
     protected $fillable = [
         'user_id', 'recipe_name', 'recipe_desc', 'ingredients'
     ];
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
     use HasFactory;
 }

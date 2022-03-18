@@ -23,6 +23,15 @@
                     <h3>Instructions</h3>
                     <input type="text" name="recipeDesc" id=""> <br>
                     <h3>Ingredients</h3>
+                    <input type="text" name="ingredients" id=""> <br>
+                    @foreach($categories as $category)
+                    {{-- <p>{{ $category->category_name }}</p>
+
+                    <br> --}}
+                    <input type="checkbox" name="categories[]" value="{{ $category->id }}">
+                    <label>{{ $category->category_name }}</label>
+                    @endforeach
+
                     {{-- my brain loading rn  --}}
                     <button type="submit">Submit</button>
                 </form>
