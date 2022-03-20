@@ -16,24 +16,25 @@
 
                 </div> --}}
 
-                <?php echo"$recipe"; ?>
 
-                <form method="post" action="{{ route('updateRecipe') }}" id="">
+
+                <form method="POST" action="{{ route('recipes.update', ['recipe' => $recipe]) }}" id="">
                     {{ csrf_field() }}
-                    {{-- @method('PUT') --}}
+                    @method('PUT')
+
                     <label for="NewRecipe">Edit your recipe!</label>
                     <h3>Name</h3>
-                    <input type="text" required value="{{$recipe->recipe_name}}" name="recipeTitle" id=""> <br>
+                    <input type="text" value="{{$recipe->recipe_name}}" name="recipeTitle" id=""> <br>
                     <h3>Instructions</h3>
-                    <input type="text" required value="{{$recipe->recipe_desc}}" name="recipeDesc" id=""> <br>
+                    <input type="text" value="{{$recipe->recipe_desc}}" name="recipeDesc" id=""> <br>
                     <h3>Ingredients</h3>
                     {{-- <input type="text" required name="ingredients" id=""> <br> --}}
                           {{-- hidden input for ingredients array --}}
                     <input type="hidden" id="ingredients" value="{{$recipe->ingredients}}" name="ingredients">
                     <h3>Cookingtime (Minutes)</h3>
-                    <input type="number" required value="{{$recipe->time}}" name="time" id=""> <br>
+                    <input type="number" value="{{$recipe->time}}" name="time" id=""> <br>
 
-
+{{--
                     @foreach($categories as $category)
 
                     <input type="checkbox" name="categories[]" value="{{ $category->id }}">
@@ -41,7 +42,7 @@
                     @endforeach
                     <script src="{{asset('../js/ingredients.js')}}"></script>
                     <div id="ingList"></div>
-                    <br>
+                    <br> --}}
                     {{-- my brain loading rn  --}}
                     <button type="submit" value="Submit">Submit</button>
                 </form>

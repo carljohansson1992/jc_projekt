@@ -8,17 +8,6 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    <p><?php echo "$category->recipes"?></p>
-
-                    @foreach($category->recipes as $recipe)
-                    <h3><a href="/showTheRecipe/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
-
-
-                    <br>
-                    <p>{{ $recipe->recipe_desc }}</p>
-                    @endforeach
-
-
                     {{-- @foreach($recipes as $recipe)
                     <p>{{ $recipe->recipe_name }}</p>
                     <br>
@@ -28,9 +17,13 @@
 
                     <hr> --}}
                     {{-- @endforeach --}}
-                    {{-- <p>{{ $recipe->recipe_name }}</p> --}}
+                    <p>{{ $recipe->recipe_name }}</p>
                     {{-- {{ auth()->user()->name}} --}}
 
+                    @if (Auth::id() == $recipe->user_id)
+                        <a href="/recipes/{{$recipe->id}}/edit">Edit</a>
+                    @endif
+{{-- time for a if statement for users  --}}
 
                 </div>
             </div>

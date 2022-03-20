@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
-use App\Models\Recipe;
 
 
 class RecipeController extends Controller
@@ -20,16 +18,11 @@ class RecipeController extends Controller
     {
         $categories = Category::orderby('category_name')->get();
         $recipes = Recipe::orderby('recipe_name')->get();
-        return view('index', [
+        return view('recipes/index', [
             'recipes' => $recipes,
             'categories' => $categories,
         ]);
-
-
-
-
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -39,10 +32,10 @@ class RecipeController extends Controller
     public function create()
     {
         $categories = Category::orderby('category_name')->get();
-        return view('home');
-        // return view('create', [
-        //     'categories' => $categories,
-        // ]);
+
+        return view('recipes/create', [
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -63,30 +56,26 @@ class RecipeController extends Controller
         $newRecipe->save();
         $newRecipe->categories()->sync($request->categories);
 
-        return view('home');
+        return redirect('/recipes/create');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Recipe  $Recipe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        // $recipes = Recipe::find($id);
+        $recipe = Recipe::find($id);
 
-            // 'recipes' => $recipes
-            $recipe = Recipe::find($id);
-
-        return view('show')->with('recipe', $recipe);
+        return view('recipes.show')->with('recipe', $recipe);
     }
-
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Recipe  $recipe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -95,55 +84,47 @@ class RecipeController extends Controller
         $categories = Category::orderby('category_name')->get();
 
 
-        return view('edit',[
+        return view('recipes.edit',[
             'categories' => $categories,
-        ])->with('recipe', $recipe);
+            'recipe' => $recipe]);
+        // ])->with('recipe', $recipe);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recipe  $recipe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Recipe $recipe)
     {
+        // $request->validate([
+        //     'title' => 'required',
+        //     'content'   =>  'required',
+        //     'recipe_name' => 'required',
+        //     'recipe_desc' => 'required',
+        //     'ingredients' => 'required',
+        //     'time' => 'required',
+        // ]);
 
-        $request->validate([
-            'title' => 'required',
-            'content'   =>  'required',
-            'recipe_name' => 'required',
-            'recipe_desc' => 'required',
-            'ingredients' => 'required',
-            'time' => 'required'
-        ]);
+        $recipe->save($request->all());
 
-        $recipe->update($request->all());
+        return redirect()
+            ->route('recipes.show', ['recipe' => $recipe])
+            ->with('success', 'Recipe succesfully updated');
 
-        return view('show')->with('recipe', $recipe);
-
-
-        // $recipe = Recipe::find($id);
-        // $recipe->user_id = Auth::user()->id;
-        // $recipe->recipe_name = request('recipeTitle');
-        // $recipe->recipe_desc = request('recipeDesc');
-        // $recipe->ingredients = request('ingredients');
-        // $recipe->time = request('time');
-
-        // $recipe->update();
-        // $recipe->categories()->sync($request->categories);
-
-
+        // return view('show')->with('recipe', $recipe);
+        // return view('recipes.show')->with('recipe', $recipe);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Recipe  $Recipe
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recipe $recipe)
+    public function destroy($id)
     {
         //
     }

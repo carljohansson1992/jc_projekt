@@ -16,8 +16,8 @@
 
                     {{ __('You are logged in!') }}
                     <a href="{{ url('/categories') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Categories</a>
-                    <a href="{{ url('/createRecipe') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Create a new recipe!</a>
-                    <a href="{{ url('/showRecipes') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Show recipes!</a>
+                    <a href="{{ url('/recipes/create') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Create a new recipe!</a>
+                    <a href="{{ url('/recipes') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Show recipes!</a>
 
                 </div>
             </div>

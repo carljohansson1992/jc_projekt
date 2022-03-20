@@ -10,14 +10,14 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div>
                     @foreach($categories as $category)
-                    <a href="/categoryRecipe/{{$category->id}}">{{$category->category_name}}</a>
+                    <a href="/categories/{{$category->id}}">{{$category->category_name}}</a>
 
                     @endforeach
                 </div>
 
                 <div class="card-body">
                     @foreach($recipes as $recipe)
-                    <h3><a href="/showTheRecipe/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
+                    <h3><a href="/recipes/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
 
 
                     <br>

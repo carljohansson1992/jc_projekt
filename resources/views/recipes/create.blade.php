@@ -15,7 +15,7 @@
                     @endforeach
 
                 </div> --}}
-                <form method="post" action="{{ route('submitrecipe') }}" id="createForm">
+                <form method="POST" action="/recipes" id="createForm">
                     {{ csrf_field() }}
                     <label for="NewRecipe">Create a new recipe!</label>
                     <h3>Name</h3>
@@ -28,10 +28,10 @@
                     <input type="hidden" id="ingredients" name="ingredients">
                     <h3>Cookingtime (Minutes)</h3>
                     <input type="number" required name="time" id=""> <br>
-              
-                   
+
+
                     @foreach($categories as $category)
-                   
+
                     <input type="checkbox" name="categories[]" value="{{ $category->id }}">
                     <label>{{ $category->category_name }}</label>
                     @endforeach
