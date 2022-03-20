@@ -19,7 +19,11 @@
                     {{-- @endforeach --}}
                     <p>{{ $recipe->user_id }}</p>
                     {{-- {{ auth()->user()->name}} --}}
-
+                
+                    @if (Auth::id() == $recipe->user_id) 
+                        {{ "IT'S A MATCH" }}
+                    @endif
+{{-- time for a if statement for users  --}}
 
                 </div>
             </div>
