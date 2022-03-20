@@ -1,5 +1,6 @@
 
 let ingArray = [];
+
 console.log("it's connected!");
 let createForm = document.getElementById('createForm');
 let ingInput = document.createElement('input');
@@ -13,16 +14,23 @@ createForm.appendChild(ingSubmit);
 // Section 1 to add into ingredients list
 console.log("hahaaa");
 let addIngredient = function(e) {
-  
     alert("NO");
     e.preventDefault;
     ingArray.push(ingInput.value);
     console.log(ingArray);
     document.getElementById('ingredients').value = ingArray;
-    document.getElementById('ingList').innerHTML += ingInput.value + "<hr>";
+    document.getElementById('ingList').innerHTML += "<div id='" + ingInput.value +"'><p>" + ingInput.value +  "</p><button type='button' id='removed' onclick=removeIng('" + ingInput.value + "')>X</button></div>";
+
 };
-let removeIng = function() {
-  console.log("oh");
+let removeIng = function(ing) {
+    const index = ingArray.indexOf(ing);
+if (index > -1) {
+  ingArray.splice(index, 1);
+
+}
+let remEle = document.getElementById(ing);
+remEle.remove(); 
+document.getElementById('ingredients').value = ingArray;
 };
 ingSubmit.addEventListener("click", addIngredient, false);
 
