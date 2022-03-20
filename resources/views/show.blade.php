@@ -19,9 +19,9 @@
                     {{-- @endforeach --}}
                     <p>{{ $recipe->recipe_name }}</p>
                     {{-- {{ auth()->user()->name}} --}}
-                
-                    @if (Auth::id() == $recipe->user_id) 
-                        {{ "IT'S A MATCH" }}
+
+                    @if (Auth::id() == $recipe->user_id)
+                        <a href="/editRecipe/{{$recipe->id}}">Edit</a>
                     @endif
 {{-- time for a if statement for users  --}}
 

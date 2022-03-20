@@ -39,9 +39,10 @@ class RecipeController extends Controller
     public function create()
     {
         $categories = Category::orderby('category_name')->get();
-        return view('create', [
-            'categories' => $categories,
-        ]);
+        return view('home');
+        // return view('create', [
+        //     'categories' => $categories,
+        // ]);
     }
 
     /**
@@ -88,9 +89,15 @@ class RecipeController extends Controller
      * @param  \App\Models\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function edit(Recipe $recipe)
+    public function edit($id)
     {
-        //
+        $recipe = Recipe::find($id);
+        $categories = Category::orderby('category_name')->get();
+
+
+        return view('edit',[
+            'categories' => $categories,
+        ])->with('recipe', $recipe);
     }
 
     /**
@@ -102,7 +109,32 @@ class RecipeController extends Controller
      */
     public function update(Request $request, Recipe $recipe)
     {
-        //
+
+        $request->validate([
+            'title' => 'required',
+            'content'   =>  'required',
+            'recipe_name' => 'required',
+            'recipe_desc' => 'required',
+            'ingredients' => 'required',
+            'time' => 'required'
+        ]);
+
+        $recipe->update($request->all());
+
+        return view('show')->with('recipe', $recipe);
+
+
+        // $recipe = Recipe::find($id);
+        // $recipe->user_id = Auth::user()->id;
+        // $recipe->recipe_name = request('recipeTitle');
+        // $recipe->recipe_desc = request('recipeDesc');
+        // $recipe->ingredients = request('ingredients');
+        // $recipe->time = request('time');
+
+        // $recipe->update();
+        // $recipe->categories()->sync($request->categories);
+
+
     }
 
     /**

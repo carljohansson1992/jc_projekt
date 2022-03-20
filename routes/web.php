@@ -27,3 +27,6 @@ Route::get('/categories', [App\Http\Controllers\CategoryController::class, 'inde
 Route::get('/createRecipe', [App\Http\Controllers\RecipeController::class, 'create'])->name('createRecipe');
 Route::post('/submitrecipe', [App\Http\Controllers\RecipeController::class, 'store'])->name('submitrecipe');
 Route::get('/categoryRecipe/{id}', [App\Http\Controllers\CategoryController::class, 'show'])->name('categoryRecipe');
+
+Route::get('/editRecipe/{id}', [App\Http\Controllers\RecipeController::class, 'edit'])->name('editRecipe');
+Route::post('/updateRecipe', [App\Http\Controllers\RecipeController::class, 'update'])->name('updateRecipe');
