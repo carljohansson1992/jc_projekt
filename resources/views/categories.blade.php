@@ -21,7 +21,7 @@
                     @foreach($categories as $tag)
                         <option value="{{ $tag->id }}">{{ $tag->title }}</option>
                     @endforeach --}}
-
+                    yo
 
 
 
