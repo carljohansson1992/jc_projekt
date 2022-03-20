@@ -26,3 +26,4 @@ Route::get('/showTheRecipe/{id}', [App\Http\Controllers\RecipeController::class,
 Route::get('/categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('categories');
 Route::get('/createRecipe', [App\Http\Controllers\RecipeController::class, 'create'])->name('createRecipe');
 Route::post('/submitrecipe', [App\Http\Controllers\RecipeController::class, 'store'])->name('submitrecipe');
+Route::get('/categoryRecipe/{id}', [App\Http\Controllers\CategoryController::class, 'show'])->name('categoryRecipe');

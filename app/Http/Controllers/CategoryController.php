@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -15,8 +16,10 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderby('category_name')->get();
+        $recipes = Recipe::orderby('recipe_name')->get();
         return view('categories', [
             'categories' => $categories,
+            'recipes' => $recipes,
         ]);
     }
 
@@ -47,9 +50,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('category/show')->with('category', $category);
     }
 
     /**

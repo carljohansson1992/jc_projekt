@@ -18,10 +18,16 @@ class RecipeController extends Controller
      */
     public function index()
     {
+        $categories = Category::orderby('category_name')->get();
         $recipes = Recipe::orderby('recipe_name')->get();
         return view('index', [
             'recipes' => $recipes,
+            'categories' => $categories,
         ]);
+
+
+
+
     }
 
 
