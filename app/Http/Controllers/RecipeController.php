@@ -108,7 +108,7 @@ class RecipeController extends Controller
         //     'time' => 'required',
         // ]);
 
-        $recipe->save($request->all());
+        $recipe->update($request->all());
 
         return redirect()
             ->route('recipes.show', ['recipe' => $recipe])
