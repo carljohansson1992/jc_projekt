@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -84,9 +85,10 @@ class RecipeController extends Controller
         $categories = Category::orderby('category_name')->get();
 
 
-        return view('recipes.edit',[
+        return view('recipes.edit', [
             'categories' => $categories,
-            'recipe' => $recipe]);
+            'recipe' => $recipe
+        ]);
         // ])->with('recipe', $recipe);
     }
 
@@ -97,24 +99,22 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recipe $recipe)
+    public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'title' => 'required',
-        //     'content'   =>  'required',
-        //     'recipe_name' => 'required',
-        //     'recipe_desc' => 'required',
-        //     'ingredients' => 'required',
-        //     'time' => 'required',
-        // ]);
+        $recipe = Recipe::where('id', '=',  $id)->first();
 
-        $recipe->update($request->all());
+        $recipe->recipe_name = request('recipeTitle');
+        $recipe->recipe_desc = request('recipeDesc');
+        $recipe->ingredients = request('ingredients');
+        $recipe->time = request('time');
 
-        return redirect()
-            ->route('recipes.show', ['recipe' => $recipe])
-            ->with('success', 'Recipe succesfully updated');
+        $recipe->update();
 
-        // return view('show')->with('recipe', $recipe);
+        ///////////
+
+        /////////
+
+        return view('home');
         // return view('recipes.show')->with('recipe', $recipe);
     }
 
