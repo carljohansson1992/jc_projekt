@@ -37,17 +37,20 @@
                     <input type="number" value="{{$recipe->time}}" name="time" id=""> <br>
 
                     <div id="catChange">
-                    @foreach($recipe->categories as $category)
+                    {{-- @foreach($recipe->categories as $category)
 
                         <input type="checkbox" name="categories[]"value="{{ $category->id }}" checked>
                         <label id="{{ $category->category_name }}">{{ $category->category_name }}</label>
 
 
-                    @endforeach
+                    @endforeach --}}
                     @foreach($categories as $category)
 
 
-                        <input type="checkbox" name="categories[]"value="{{ $category->id }}">
+                        <input type="checkbox" name="categories[]"value="{{ $category->id }}"
+                        @if($recipe->categories->contains($category->id)) checked=checked @endif
+                        {{-- {{in_array($category->category_name, $recipe->categories->pluck('category_name') )? 'checked="checked"':''}} --}}
+                        >
                         <label>{{ $category->category_name }}</label>
                     @endforeach
 

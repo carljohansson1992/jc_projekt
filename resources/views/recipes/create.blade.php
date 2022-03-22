@@ -22,24 +22,27 @@
                     <input type="text" required name="recipeTitle" id=""> <br>
                     <h3>Instructions</h3>
                     <input type="text" required name="recipeDesc" id=""> <br>
-                    <h3>Ingredients</h3>
+
                     {{-- <input type="text" required name="ingredients" id=""> <br> --}}
                           {{-- hidden input for ingredients array --}}
                     <input type="hidden" id="ingredients" name="ingredients">
                     <h3>Cookingtime (Minutes)</h3>
                     <input type="number" required name="time" id=""> <br>
-
+                    <h3>Ingredients</h3>
+                    <br>
+                    <script src="{{asset('../js/ingredients.js')}}"></script>
+                    <div id="ingList"></div>
 
                     @foreach($categories as $category)
 
                     <input type="checkbox" name="categories[]" value="{{ $category->id }}">
                     <label>{{ $category->category_name }}</label>
                     @endforeach
-                    <script src="{{asset('../js/ingredients.js')}}"></script>
-                    <div id="ingList"></div>
                     <br>
+
+
                     {{-- my brain loading rn  --}}
-                    <button type="submit">Submit</button>
+                    <button class="btn btn-success" type="submit">Submit</button>
                 </form>
             </div>
         </div>

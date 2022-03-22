@@ -30,15 +30,15 @@
                     {{-- {{ auth()->user()->name}} --}}
 
                     @if (Auth::id() == $recipe->user_id)
-                        <a href="/recipes/{{$recipe->id}}/edit">Edit</a>
+                        <button type="button"  class="btn btn-success"><a style="color: white; text-decoration: none;" href="/recipes/{{$recipe->id}}/edit">Edit</a></button>
 
-                        <a href="{{ route('recipes.destroy', $recipe->id) }}">Delete</a>
+
 
                         <form action="{{ route('recipes.destroy', ['recipe' => $recipe]) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     @endif
 {{-- time for a if statement for users  --}}

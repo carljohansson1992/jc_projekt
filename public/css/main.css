@@ -1,0 +1,12 @@
+.navbar {
+    background-color: rgb(212, 142, 154);
+}
+
+body{
+    background-color: pink;
+}
+
+#ingList > * {
+    display: flex;
+    flex-direction: row;
+}
