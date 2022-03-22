@@ -34,16 +34,27 @@
                     <h3>Cookingtime (Minutes)</h3>
                     <input type="number" value="{{$recipe->time}}" name="time" id=""> <br>
 
-{{--
+                    <div id="catChange">
+                    @foreach($recipe->categories as $category)
+
+                        <input type="checkbox" name="categories[]"value="{{ $category->id }}" checked>
+                        <label id="{{ $category->category_name }}">{{ $category->category_name }}</label>
+
+
+                    @endforeach
                     @foreach($categories as $category)
 
-                    <input type="checkbox" name="categories[]" value="{{ $category->id }}">
-                    <label>{{ $category->category_name }}</label>
+
+                        <input type="checkbox" name="categories[]"value="{{ $category->id }}">
+                        <label>{{ $category->category_name }}</label>
                     @endforeach
+
+
+                </div>
                     <script src="{{asset('../js/ingredients.js')}}"></script>
                     <div id="ingList"></div>
-                    <br> --}}
-                    {{-- my brain loading rn  --}}
+                    <br>
+
                     <button type="submit" value="Submit">Submit</button>
                 </form>
             </div>

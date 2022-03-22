@@ -110,6 +110,7 @@ class RecipeController extends Controller
         $recipe->time = request('time');
 
         $recipe->update();
+        $recipe->categories()->sync($request->categories);
 
         ///////////
 
