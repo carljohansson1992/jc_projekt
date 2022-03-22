@@ -31,6 +31,15 @@
 
                     @if (Auth::id() == $recipe->user_id)
                         <a href="/recipes/{{$recipe->id}}/edit">Edit</a>
+
+                        <a href="{{ route('recipes.destroy', $recipe->id) }}">Delete</a>
+
+                        <form action="{{ route('recipes.destroy', ['recipe' => $recipe]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit">Delete</button>
+                        </form>
                     @endif
 {{-- time for a if statement for users  --}}
 
