@@ -57,7 +57,8 @@ class RecipeController extends Controller
         $newRecipe->save();
         $newRecipe->categories()->sync($request->categories);
 
-        return redirect('/recipes/create');
+        // return redirect('/recipes/create');
+        return view('recipes.show')->with('recipe', $newRecipe);
     }
 
     /**
@@ -113,8 +114,8 @@ class RecipeController extends Controller
         ///////////
 
         /////////
-
-        return view('home');
+        return view('recipes.show')->with('recipe', $recipe);
+        // return view('home');
         // return view('recipes.show')->with('recipe', $recipe);
     }
 

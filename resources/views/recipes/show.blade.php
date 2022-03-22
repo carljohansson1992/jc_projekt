@@ -18,6 +18,15 @@
                     <hr> --}}
                     {{-- @endforeach --}}
                     <p>{{ $recipe->recipe_name }}</p>
+                    <p>{{ $recipe->recipe_desc }}</p>
+                    <p>{{ $recipe->categories }}</p>
+
+
+
+                    <p>{{ $recipe->time }} minutes</p>
+                    {{-- @foreach($recipe->ingredients as $ingredient)
+                        <p>{{ $recipe->$ingredient }}</p>
+                    @endforeach --}}
                     {{-- {{ auth()->user()->name}} --}}
 
                     @if (Auth::id() == $recipe->user_id)
