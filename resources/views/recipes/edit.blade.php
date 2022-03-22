@@ -28,6 +28,8 @@
                     <h3>Instructions</h3>
                     <input type="text" value="{{$recipe->recipe_desc}}" name="recipeDesc" id=""> <br>
                     <h3>Ingredients</h3>
+                    <div id="editForm"></div>
+                    <div id="ingList"></div>
                     {{-- <input type="text" required name="ingredients" id=""> <br> --}}
                           {{-- hidden input for ingredients array --}}
                     <input type="hidden" id="ingredients" value="{{$recipe->ingredients}}" name="ingredients">
@@ -44,6 +46,7 @@
                     <div id="ingList"></div>
                     <br> --}}
                     {{-- my brain loading rn  --}}
+                    <script src="{{asset('../js/show-ingredients.js')}}"></script>
                     <button type="submit" value="Submit">Submit</button>
                 </form>
             </div>
