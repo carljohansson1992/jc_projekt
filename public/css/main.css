@@ -5,6 +5,11 @@ body {
 .navbar {
     background-color: rgb(212, 142, 154);
 }
+
+#logo-gif {
+    height: 50px;
+    width: auto;
+}
 .spaceBtn {
     display: flex;
     flex-direction: row;
