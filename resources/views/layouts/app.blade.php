@@ -57,6 +57,7 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
+             
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -70,6 +71,9 @@
                                     </form>
                                 </div>
                             </li>
+                           <li><a class="nav-link" href="{{ url('/categories') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Categories</a></li>
+                            <li><a class="nav-link" href="{{ url('/recipes/create') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Create a new recipe!</a></li>
+                            <li><a class="nav-link"  href="{{ url('/recipes') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Show recipes!</a></li>
                         @endguest
                     </ul>
                 </div>

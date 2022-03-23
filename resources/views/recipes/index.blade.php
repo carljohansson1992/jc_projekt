@@ -29,7 +29,7 @@
 
                     <hr>
                     @endforeach
-                    {{ auth()->user()->name}}
+                  
 
 
                 </div>

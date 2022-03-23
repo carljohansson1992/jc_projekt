@@ -3,18 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+
+        @if (Route::has('login'))
+                
+        @auth
         <div class="col-md-8">
             <div class="card">
 
-{{--
-                <div class="card-body">
-                    @foreach($recipes as $recipe)
-                    <p>{{ $recipe->recipe_name }}</p>
 
-                    <br>
-                    @endforeach
-
-                </div> --}}
                 <form method="POST" action="/recipes" id="createForm">
                     {{ csrf_field() }}
                     <label for="NewRecipe">Create a new recipe!</label>
@@ -46,7 +42,16 @@
                 </form>
             </div>
         </div>
+        @else
+           
+      
+            @if (Route::has('register'))
+            <p>Du måste <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">logga in</a> eller          <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">registrera dig</a> för att skapa recept!</p>
+            @endif
+        @endauth
+    </div>
+@endif
+        
     </div>
 </div>
 @endsection
-<script>console.log("please");</script>
