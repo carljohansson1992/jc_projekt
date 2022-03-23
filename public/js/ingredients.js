@@ -9,8 +9,6 @@ ingSubmit.classList.add("btn");
 ingSubmit.classList.add("btn-success");
 ingSubmit.classList.add("d-block");
 ingSubmit.classList.add("mx-auto");
-
-
 ingSubmit.type = "button";
 ingSubmit.innerText = "Add ingredient";
 createForm.appendChild(ingInput);

@@ -10,15 +10,14 @@ let ingSubmit = document.createElement('button');
 ingSubmit.id = "addIng";
 ingSubmit.classList.add("btn");
 ingSubmit.classList.add("btn-success");
+ingSubmit.classList.add("d-block");
+ingSubmit.classList.add("mx-auto");
 ingSubmit.type = "button";
 ingSubmit.innerText = "Add ingredient";
 editForm.appendChild(ingInput);
 editForm.appendChild(ingSubmit);
-
-
-//
 editArray.forEach(function(editIng) {
-    document.getElementById('ingList').innerHTML += "<div id='" + editIng +"'><button type='button' class='btn btn-danger' id='removed' onclick=removeIng('" + editIng + "')>X</button><p>" + editIng+  "</p></div>";
+    document.getElementById('ingList').innerHTML += "<div class='remBtn' id='" + editIng +"'><button type='button' class='btn btn-danger' id='removed' onclick=removeIng('" + editIng + "')>X</button><p>" + editIng+  "</p></div>";
 });
 
 
