@@ -16,13 +16,17 @@ let editForm = document.getElementById('editForm');
 let ingInput = document.createElement('input');
 let ingSubmit = document.createElement('button');
 ingSubmit.id = "addIng";
+ingSubmit.classList.add("btn");
+ingSubmit.classList.add("btn-success");
 ingSubmit.type = "button";
 ingSubmit.innerText = "Add ingredient";
 editForm.appendChild(ingInput);
 editForm.appendChild(ingSubmit);
+
+
 //
 editArray.forEach(function(editIng) {
-    document.getElementById('ingList').innerHTML += "<div id='" + editIng +"'><p>" + editIng+  "</p><button type='button' id='removed' onclick=removeIng('" + editIng + "')>X</button></div>";
+    document.getElementById('ingList').innerHTML += "<div id='" + editIng +"'><button type='button' class='btn btn-danger' id='removed' onclick=removeIng('" + editIng + "')>X</button><p>" + editIng+  "</p></div>";
 });
 // Section 1 to add into ingredients list
 
@@ -32,7 +36,7 @@ let addIngredient = function(e) {
     editArray.push(ingInput.value);
     console.log(editArray);
     document.getElementById('ingredients').value = editArray;
-    document.getElementById('ingList').innerHTML += "<div id='" + ingInput.value +"'><p>" + ingInput.value +  "</p><button type='button' id='removed' onclick=removeIng('" + ingInput.value + "')>X</button></div>";
+    document.getElementById('ingList').innerHTML += "<div id='" + ingInput.value +"'><button type='button' class='btn btn-danger' id='removed' onclick=removeIng('" + ingInput.value + "')>X</button><p>" + ingInput.value +  "</p></div>";
 
 };
 let removeIng = function(ing) {

@@ -60,10 +60,10 @@
                     <div id="ingList"></div>
                     <br>
 
-                    <br> --}}
+                    <br>
                     {{-- my brain loading rn  --}}
                     <script src="{{asset('../js/show-ingredients.js')}}"></script>
-                    <button type="submit" value="Submit">Submit</button>
+                    <button type="submit" class="btn btn-success" value="Submit">Submit</button>
                 </form>
             </div>
         </div>
