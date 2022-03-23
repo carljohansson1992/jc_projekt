@@ -8,7 +8,8 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    <p><?php echo "$category->recipes"?></p>
+                    <h1>{{ $category->category_name }}</h1>
+                    <p>{{ $category->category_desc }}</p>
 
                     @foreach($category->recipes as $recipe)
                     <h3><a href="/categories.show/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
