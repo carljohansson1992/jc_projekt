@@ -35,9 +35,6 @@
                     <label>{{ $category->category_name }}</label>
                     @endforeach
                     <br>
-
-
-                    {{-- my brain loading rn  --}}
                     <button class="btn btn-success" type="submit">Submit</button>
                 </form>
             </div>

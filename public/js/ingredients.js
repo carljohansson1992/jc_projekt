@@ -11,7 +11,6 @@ ingSubmit.type = "button";
 ingSubmit.innerText = "Add ingredient";
 createForm.appendChild(ingInput);
 createForm.appendChild(ingSubmit);
-console.log("hahaaa");
 let addIngredient = function(e) {
     e.preventDefault;
     ingArray.push(ingInput.value);

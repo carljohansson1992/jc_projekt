@@ -1,13 +1,5 @@
 
 
-// $myString = "hej,vad,heter,du";
-// $myArray = explode(",", $myString);
-
-// print_r($myArray);
-console.log('connected');
-/////Reusable
-
-
 let ingArray = document.getElementById('ingredients').value;
 let editArray = ingArray.split(",");
 
@@ -28,10 +20,9 @@ editForm.appendChild(ingSubmit);
 editArray.forEach(function(editIng) {
     document.getElementById('ingList').innerHTML += "<div id='" + editIng +"'><button type='button' class='btn btn-danger' id='removed' onclick=removeIng('" + editIng + "')>X</button><p>" + editIng+  "</p></div>";
 });
-// Section 1 to add into ingredients list
+
 
 let addIngredient = function(e) {
-    alert("NO");
     e.preventDefault;
     editArray.push(ingInput.value);
     console.log(editArray);
@@ -52,4 +43,3 @@ document.getElementById('ingredients').value = editArray;
 ingSubmit.addEventListener("click", addIngredient, false);
 
 console.log(editArray);
-// Section 2 to convert into input 
