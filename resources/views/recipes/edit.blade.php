@@ -5,22 +5,23 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card text-center border border-success shadow-lg rounded-lg p-3">
-                <form method="POST" action="{{ route('recipes.update', ['recipe' => $recipe]) }}" id="">
+                <form id="editContainer" method="POST" action="{{ route('recipes.update', ['recipe' => $recipe]) }}" id="">
                     {{ csrf_field() }}
                     @method('PUT')
 
-                    <label for="NewRecipe">Edit your recipe!</label>
-                    <h3>Name</h3>
+                    <h2>Redigera ditt recept!</h2>
+                    <hr>
+                    <h3>Namn</h3>
                     <input type="text" value="{{$recipe->recipe_name}}" name="recipeTitle" id=""> <br>
-                    <h3>Instructions</h3>
-                    <textarea type="text" value="{{$recipe->recipe_desc}}" name="recipeDesc" id=""></textarea> <br>
-                    <h3>Ingredients</h3>
+                    <h3>Instruktioner</h3>
+                    <textarea type="text" value="{{$recipe->recipe_desc}}" name="recipeDesc" rows="15" cols="50" id="">{{$recipe->recipe_desc}}</textarea> <br>
+                    <h3>Ingredienser</h3>
                     <div id="editForm"></div>
                     <div id="ingList"></div>
                     <input type="hidden" id="ingredients" value="{{$recipe->ingredients}}" name="ingredients">
-                    <h3>Cookingtime (Minutes)</h3>
+                    <h3>Tillagningstid (Minuter)</h3>
                     <input type="number" value="{{$recipe->time}}" name="time" id=""> <br>
-
+                    <h3>Kategorier</h3>
                     <div id="catChange">
 
                     @foreach($categories as $category)
