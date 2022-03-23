@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+            <div class="card text-center border border-success shadow-lg rounded-lg p-3">
+
 
                 <div class="card-body">
                     <h1>{{ $category->category_name }}</h1>
