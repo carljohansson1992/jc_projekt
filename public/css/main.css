@@ -10,17 +10,23 @@ body {
     height: 50px;
     width: auto;
 }
+#front-gif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 .spaceBtn {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.card{
+.card {
     border-radius: 20px;
 }
 .card-body > h3 {
     padding: 10px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Ubuntu", sans-serif;
 }
 #createForm > input {
     margin: 15px;
@@ -41,10 +47,9 @@ body {
     margin: 10px;
 }
 
-#editContainer>h3{
+#editContainer > h3 {
     padding: 10px;
 }
-
 
 #ingList > * {
     display: flex;

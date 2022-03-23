@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card card card text-center border border-success shadow-lg rounded-lg p-3">
                 <h1>Välkommen!</h1>
-
+                <img id="front-gif" src="{{ asset('cat.gif') }}">
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
