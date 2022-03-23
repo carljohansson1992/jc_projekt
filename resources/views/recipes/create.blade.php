@@ -19,13 +19,13 @@
                     <h3>Instructions</h3>
                     <input type="text" required name="recipeDesc" id=""> <br>
 
-                    {{-- <input type="text" required name="ingredients" id=""> <br> --}}
-                          {{-- hidden input for ingredients array --}}
-                    <input type="hidden" id="ingredients" name="ingredients">
+                   
                     <h3>Cookingtime (Minutes)</h3>
                     <input type="number" required name="time" id=""> <br>
+                  
                     <h3>Ingredients</h3>
-                    <br>
+                    <input type="text" required name="ingredients" id="ingredients" oninvalid="setCustomValidity('You have to add at least one ingredient!')">
+                  
                     <script src="{{asset('../js/ingredients.js')}}"></script>
                     <div id="ingList"></div>
 
@@ -35,9 +35,6 @@
                     <label>{{ $category->category_name }}</label>
                     @endforeach
                     <br>
-
-
-                    {{-- my brain loading rn  --}}
                     <button class="btn btn-success" type="submit">Submit</button>
                 </form>
             </div>

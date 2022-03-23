@@ -2,11 +2,18 @@
     background-color: rgb(212, 142, 154);
 }
 
-body{
+body {
     background-color: pink;
 }
 
 #ingList > * {
     display: flex;
     flex-direction: row;
+}
+
+#ingredients {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    float: left;
 }
