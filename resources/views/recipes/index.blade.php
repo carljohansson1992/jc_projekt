@@ -4,32 +4,35 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card text-center border border-success shadow-lg rounded-lg">
 
 
-                <div class="card-header">{{ __('Dashboard') }}</div>
-                <div>
+                <h2 class="card-header bg-success text-white">{{ __('Recept') }}</h2>
+                <div class="m-3">
                     @foreach($categories as $category)
-                    <a href="/categories/{{$category->id}}">{{$category->category_name}}</a>
+                    <a class="btn btn-success m-2" href="/categories/{{$category->id}}">{{$category->category_name}}</a>
 
                     @endforeach
                 </div>
 
-                <div class="card-body">
+                <div class="card-body m-3">
                     @foreach($recipes as $recipe)
-                    <h3><a href="/recipes/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
+                    <h3><a class="text-success" href="/recipes/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
 
 
                     <br>
-                    <p>{{ $recipe->recipe_desc }}</p>
-                    @foreach($recipe->categories as $categories)
-                    <p>{{ $categories->category_name }}</p>
-                    @endforeach
+                    {{-- <p>{{ $recipe->recipe_desc }}</p> --}}
+                    <div>
+
+                        @foreach($recipe->categories as $category)
+                        <a href="/categories/{{$category->id}}">{{$category->category_name}}</a>
+                        @endforeach
+                     </div>
                     <br>
 
                     <hr>
                     @endforeach
-                  
+
 
 
                 </div>

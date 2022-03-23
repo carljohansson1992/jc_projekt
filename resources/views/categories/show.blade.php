@@ -12,7 +12,7 @@
                     <p>{{ $category->category_desc }}</p>
 
                     @foreach($category->recipes as $recipe)
-                    <h3><a href="/categories.show/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
+                    <h3><a href="/recipes/{{$recipe->id}}">{{ $recipe->recipe_name }}</a></h3>
 
 
                     <br>
