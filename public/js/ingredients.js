@@ -13,7 +13,6 @@ ingSubmit.innerText = "Add ingredient";
 createForm.appendChild(ingInput);
 createForm.appendChild(ingSubmit);
 
-
 // Section 1 to add into ingredients list
 console.log("hahaaa");
 let addIngredient = function(e) {
@@ -22,7 +21,7 @@ let addIngredient = function(e) {
     ingArray.push(ingInput.value);
     console.log(ingArray);
     document.getElementById('ingredients').value = ingArray;
-    document.getElementById('ingList').innerHTML += "<div id='" + ingInput.value +"'><p>" + ingInput.value +  "</p><button type='button' class='btn btn-success' id='removed' onclick=removeIng('" + ingInput.value + "')>X</button></div>";
+    document.getElementById('ingList').innerHTML += "<div id='" + ingInput.value +"'><button type='button' class='btn btn-danger' id='removed' onclick=removeIng('" + ingInput.value + "')>X</button><p>" + ingInput.value +  "</p></div>";
 
 };
 
