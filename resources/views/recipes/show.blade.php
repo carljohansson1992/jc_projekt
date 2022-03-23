@@ -18,7 +18,12 @@
                     <hr> --}}
                     {{-- @endforeach --}}
                     <p>{{ $recipe->recipe_name }}</p>
-                    <p>{{ $recipe->ingredients }}</p>
+                    <?php $listAll = explode(",", $recipe->ingredients); ?>
+                    @foreach($listAll as $listEl)
+                    <p>{{$listEl}}</p>
+                    @endforeach
+
+                    {{-- <p>{{ $recipe->ingredients }}</p> --}}
                     <p>{{ $recipe->recipe_desc }}</p>
                     @foreach($recipe->categories as $category)
                     <p>{{ $category->category_name }}</p>
