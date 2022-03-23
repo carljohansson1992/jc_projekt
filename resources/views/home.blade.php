@@ -17,6 +17,11 @@
                     {{ __('You are logged in!') }}
                     <a href="{{ url('/categories') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Categories</a>
                     <a href="{{ url('/recipes/create') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Create a new recipe!</a>
+                    {{-- @if (Auth::check())
+                        <a href="{{ url('/recipes/create') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Create a new recipe!</a>
+
+                    @endif --}}
+
                     <a href="{{ url('/recipes') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Show recipes!</a>
 
                 </div>

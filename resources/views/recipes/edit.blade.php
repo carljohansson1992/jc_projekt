@@ -26,7 +26,7 @@
                     <h3>Name</h3>
                     <input type="text" value="{{$recipe->recipe_name}}" name="recipeTitle" id=""> <br>
                     <h3>Instructions</h3>
-                    <input type="text" value="{{$recipe->recipe_desc}}" name="recipeDesc" id=""> <br>
+                    <textarea type="text" value="{{$recipe->recipe_desc}}" name="recipeDesc" id=""></textarea> <br>
                     <h3>Ingredients</h3>
                     <div id="editForm"></div>
                     <div id="ingList"></div>

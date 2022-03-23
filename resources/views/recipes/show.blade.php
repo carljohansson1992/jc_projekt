@@ -18,8 +18,11 @@
                     <hr> --}}
                     {{-- @endforeach --}}
                     <p>{{ $recipe->recipe_name }}</p>
+                    <p>{{ $recipe->ingredients }}</p>
                     <p>{{ $recipe->recipe_desc }}</p>
-                    <p>{{ $recipe->categories }}</p>
+                    @foreach($recipe->categories as $category)
+                    <p>{{ $category->category_name }}</p>
+                    @endforeach
 
 
 
