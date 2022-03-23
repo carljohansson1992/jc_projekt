@@ -4,10 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card text-center border border-success shadow-lg rounded-lg">
+            <div class="card text-center border border-success shadow-lg rounded-lg p-3">
 
 
-                <h2 class="card-header bg-success text-white">{{ __('Recept') }}</h2>
+                <h2>Recept</h2>
+                <hr>
                 <div class="m-3">
                     @foreach($categories as $category)
                     <a class="btn btn-success m-2" href="/categories/{{$category->id}}">{{$category->category_name}}</a>

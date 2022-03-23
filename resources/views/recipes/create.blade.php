@@ -18,7 +18,7 @@
                     <h3>Namn</h3>
                     <input type="text" required name="recipeTitle" id=""> <br>
                     <h3>Instruktioner</h3>
-                    <textarea type="text" required name="recipeDesc" id=""></textarea> <br>
+                    <textarea type="text" required name="recipeDesc" rows="15" cols="50" id=""></textarea> <br>
 
 
                     <h3>Tillagningstid (Minuter)</h3>

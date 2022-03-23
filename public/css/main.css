@@ -20,6 +20,7 @@ body {
 }
 .card-body > h3 {
     padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
 }
 #createForm > input {
     margin: 15px;

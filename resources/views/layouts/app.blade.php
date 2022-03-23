@@ -19,6 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -43,13 +46,16 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a href="{{ url('/recipes') }}" class="nav-link">Visa recept!</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Logga in') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrera') }}</a>
                                 </li>
                             @endif
                         @else
@@ -57,13 +63,13 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-             
+
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Logga ut') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -71,9 +77,8 @@
                                     </form>
                                 </div>
                             </li>
-                           <li><a class="nav-link" href="{{ url('/categories') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Categories</a></li>
-                            <li><a class="nav-link" href="{{ url('/recipes/create') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Create a new recipe!</a></li>
-                            <li><a class="nav-link"  href="{{ url('/recipes') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Show recipes!</a></li>
+                            <li><a class="nav-link" href="{{ url('/recipes/create') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Skapa ett nytt recept!</a></li>
+                            <li><a class="nav-link"  href="{{ url('/recipes') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Visa recept!</a></li>
                         @endguest
                     </ul>
                 </div>
