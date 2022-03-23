@@ -1,15 +1,50 @@
-.navbar {
-    background-color: rgb(212, 142, 154);
-}
+
 
 body {
     background-color: pink;
 }
 
+
+.navbar {
+    background-color: rgb(212, 142, 154);
+}
+.spaceBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.card-body>h3{
+    padding: 10px;
+}
+#createForm>input{
+    margin: 15px;
+}
+
+.remBtn{
+    display: flex;
+    justify-content: center;
+
+}
+
+.remBtn>*{
+    display: flex;
+    align-items: center;
+   margin: 10px;
+
+
+}
+
+
+
 #ingList > * {
     display: flex;
     flex-direction: row;
+    margin: 5px;
 }
+
+
 
 #ingredients {
     opacity: 0;

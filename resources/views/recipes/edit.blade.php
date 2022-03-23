@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card card text-center border border-success shadow-lg rounded-lg p-3">
                 <form method="POST" action="{{ route('recipes.update', ['recipe' => $recipe]) }}" id="">
                     {{ csrf_field() }}
                     @method('PUT')
@@ -22,13 +22,13 @@
                     <input type="number" value="{{$recipe->time}}" name="time" id=""> <br>
 
                     <div id="catChange">
-                   
+
                     @foreach($categories as $category)
 
 
                         <input type="checkbox" name="categories[]"value="{{ $category->id }}"
                         @if($recipe->categories->contains($category->id)) checked=checked @endif
-                       
+
                         >
                         <label>{{ $category->category_name }}</label>
                     @endforeach
@@ -40,7 +40,7 @@
                     <br>
 
                     <br>
-                  
+
                     <script src="{{asset('../js/show-ingredients.js')}}"></script>
                     <button type="submit" class="btn btn-success" value="Submit">Submit</button>
                 </form>

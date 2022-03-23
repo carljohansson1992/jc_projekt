@@ -7,6 +7,10 @@ let ingSubmit = document.createElement('button');
 ingSubmit.id = "addIng";
 ingSubmit.classList.add("btn");
 ingSubmit.classList.add("btn-success");
+ingSubmit.classList.add("d-block");
+ingSubmit.classList.add("mx-auto");
+
+
 ingSubmit.type = "button";
 ingSubmit.innerText = "Add ingredient";
 createForm.appendChild(ingInput);
@@ -16,7 +20,7 @@ let addIngredient = function(e) {
     ingArray.push(ingInput.value);
     console.log(ingArray);
     document.getElementById('ingredients').value = ingArray;
-    document.getElementById('ingList').innerHTML += "<div id='" + ingInput.value +"'><button type='button' class='btn btn-danger' id='removed' onclick=removeIng('" + ingInput.value + "')>X</button><p>" + ingInput.value +  "</p></div>";
+    document.getElementById('ingList').innerHTML += "<div class='remBtn' id='" + ingInput.value +"'><button type='button' class='btn btn-danger' id='removed' onclick=removeIng('" + ingInput.value + "')>X</button><p>" + ingInput.value +  "</p></div>";
 
 };
 
@@ -32,5 +36,3 @@ remEle.remove();
 document.getElementById('ingredients').value = ingArray;
 };
 ingSubmit.addEventListener("click", addIngredient, false);
-
-
